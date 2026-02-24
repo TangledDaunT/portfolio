@@ -674,7 +674,7 @@ ol {
   height: 100%;
   object-fit: cover;
   transform: scale(1.15);
-  filter: saturate(0.85) contrast(1.2) brightness(1.1) blur(22px) url(#metallic-displacement);
+  filter: saturate(0.85) contrast(1.2) brightness(1.1) blur(6px) url(#metallic-displacement);
   z-index: 0;
   opacity: 0.9;
   transition: filter 0.3s ease;
