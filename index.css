@@ -1806,6 +1806,11 @@ ol {
     justify-content: center;
   }
 
+  .reflective-card {
+    width: 280px;
+    height: 400px;
+  }
+
   .hero-visual-frame {
     max-width: 300px;
   }
@@ -1881,6 +1886,15 @@ ol {
 
   .hero-heading {
     font-size: 2.75rem;
+  }
+
+  .reflective-card {
+    width: 220px;
+    height: 320px;
+  }
+
+  .reflective-content {
+    padding: 16px;
   }
 
   .hero-visual-frame {
