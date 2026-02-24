@@ -1637,6 +1637,21 @@ ol {
   gap: var(--grid-gap);
 }
 
+.lab-video {
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.lab-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+}
+
 .lab-item {
   padding: var(--space-md) var(--space-md);
   border: 1px solid var(--border);
