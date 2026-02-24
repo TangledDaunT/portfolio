@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shreyansh Misra — AI Systems Engineer &amp; Full Stack Developer</title>
+    <meta name="description"
+        content="Portfolio of Shreyansh Misra — AI Systems Engineer, Full Stack Developer, and LLM Architect. Engineering rule-based AI systems where logic decides and language explains." />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/ogl/dist/ogl.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gl-matrix@3.4.3/gl-matrix-min.js"></script>
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- ═══ NAVIGATION ═══ -->
+    <nav class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="#" class="nav-logo">S<span>.</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#lab">Lab</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═══ SECTION 1 — HERO ═══ -->
+    <section class="hero section" id="hero">
+        <!-- ReactBits Particles Background -->
+        <div class="particles-container" id="particles-bg"></div>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">Available for Opportunities</div>
+                    <h1 class="hero-heading" id="hero-heading">Shreyansh</h1>
+                    <p class="hero-subheading">AI Systems Engineer · Full Stack Developer · LLM Architect</p>
+                    <p class="hero-description">Engineering production AI systems with 5.4M+ indexed legal documents,
+                        deterministic rule engines, and RAG pipelines — where logic decides and language explains.</p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-primary magnetic" data-strength="20">
+                            View Projects
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M7 17l9.2-9.2M17 17V8H8" />
+                            </svg>
+                        </a>
+                        <a href="https://github.com/TangledDaunT" target="_blank" rel="noopener"
+                            class="btn-secondary magnetic" data-strength="15">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M12 .3a12 12 0 00-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0012 .3" />
+                            </svg>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/shreyanshmisraa/" target="_blank" rel="noopener"
+                            class="btn-secondary magnetic" data-strength="15">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 013.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 11-.01-4.13 2.06 2.06 0 01.01 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77A1.75 1.75 0 000 1.74v20.51A1.75 1.75 0 001.77 24h20.45A1.76 1.76 0 0024 22.25V1.74A1.76 1.76 0 0022.22 0z" />
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <!-- SVG Filters for metallic displacement -->
+                    <svg class="reflective-svg-filters" aria-hidden="true">
+                        <defs>
+                            <filter id="metallic-displacement" x="-20%" y="-20%" width="140%" height="140%">
+                                <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="2" result="noise" />
+                                <feColorMatrix in="noise" type="luminanceToAlpha" result="noiseAlpha" />
+                                <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R"
+                                    yChannelSelector="G" result="rippled" />
+                                <feSpecularLighting in="noiseAlpha" surfaceScale="20" specularConstant="5"
+                                    specularExponent="20" lightingColor="#ffffff" result="light">
+                                    <fePointLight x="0" y="0" z="300" />
+                                </feSpecularLighting>
+                                <feComposite in="light" in2="rippled" operator="in" result="light-effect" />
+                                <feBlend in="light-effect" in2="rippled" mode="screen" result="metallic-result" />
+                            </filter>
+                        </defs>
+                    </svg>
+
+                    <div class="reflective-card" id="reflective-card">
+                        <video autoplay loop muted playsinline class="reflective-video">
+                            <source src="IMG_5448.MOV" type="video/mp4" />
+                        </video>
+                        <div class="reflective-noise"></div>
+                        <div class="reflective-sheen"></div>
+                        <div class="reflective-border"></div>
+
+                        <div class="reflective-content">
+                            <div class="rc-header">
+                                <div class="rc-badge">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                        <path d="M7 11V7a5 5 0 0110 0v4" />
+                                    </svg>
+                                    Verified
+                                </div>
+                                <svg class="rc-status" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                                </svg>
+                            </div>
+
+                            <div class="rc-body">
+                                <h2 class="rc-name">SHREYANSH MISRA</h2>
+                                <p class="rc-role">AI Systems Engineer</p>
+                            </div>
+
+                            <div class="rc-footer">
+                                <div class="rc-id-section">
+                                    <span class="rc-id-label">System ID</span>
+                                    <span class="rc-id-value">SYS-2024-0901</span>
+                                </div>
+                                <svg class="rc-fingerprint" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M2 12C2 6.5 6.5 2 12 2a10 10 0 018 4" />
+                                    <path d="M5 19.5C5.5 18 6 15 6 12c0-3.5 2.5-6 6-6 3 0 5.5 2 6 5" />
+                                    <path d="M12 12c0 5-1 8-4 10" />
+                                    <path d="M12 12c0 3-.5 5.5-2 8" />
+                                    <path d="M18 12c0 2-.5 4-1.5 6" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 2 — ABOUT ═══ -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-top">
+                <div class="about-inner">
+                    <p class="section-label reveal">About</p>
+                    <h2 class="section-title reveal">Building deterministic AI systems for production</h2>
+                    <p class="about-text reveal">
+                    I engineer AI systems that are reliable, explainable, and production-deployed — not experimental
+                    prototypes. My flagship system LegalLawAdvisor indexes 5.4M+ legal documents with Qdrant vectors,
+                    uses LLaMA 80B for structured reasoning, and is actively used by a practicing High Court lawyer.
+                    My work spans deterministic rule engines, RAG pipelines, IoT automation, and LLM governance.
+                </p>
+                </div>
+                <div class="about-photo-wrap reveal-right">
+                    <div class="about-photo" id="about-photo">
+                        <img src="my-photo.png" alt="Shreyansh Misra" draggable="false" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-cards stagger-children">
+                    <div class="about-card tilt-card">
+                        <div class="about-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                        </div>
+                        <h3>RAG &amp; Vector Search</h3>
+                        <p>5.4M+ indexed documents with Qdrant, Qwen embeddings, and Redis-cached retrieval achieving
+                            ~400ms light-query response.</p>
+                    </div>
+                    <div class="about-card tilt-card">
+                        <div class="about-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                        </div>
+                        <h3>Full Stack Architecture</h3>
+                        <p>Node.js, FastAPI, React, MongoDB — end-to-end systems Dockerized and deployed with
+                            Google OAuth and JWT authentication.</p>
+                    </div>
+                    <div class="about-card tilt-card">
+                        <div class="about-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3" />
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+                            </svg>
+                        </div>
+                        <h3>IoT &amp; Real-Time Systems</h3>
+                        <p>Computer vision with 132ms motion detection, WebSocket monitoring, n8n automation, and
+                            Arduino device control.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 3 — CORE SKILLS ═══ -->
+    <section class="skills section" id="skills">
+        <div class="container">
+            <p class="section-label reveal">Core Skills</p>
+            <h2 class="section-title reveal">Technical stack</h2>
+            <div class="skills-grid stagger-children">
+                <div class="skill-category tilt-card">
+                    <h3>Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category tilt-card">
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">HTML / CSS</span>
+                        <span class="skill-tag">Tailwind</span>
+                        <span class="skill-tag">Vite</span>
+                    </div>
+                </div>
+                <div class="skill-category tilt-card">
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Express</span>
+                        <span class="skill-tag">JWT / OAuth</span>
+                        <span class="skill-tag">WebSockets</span>
+                    </div>
+                </div>
+                <div class="skill-category tilt-card">
+                    <h3>AI / ML</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">LangGraph</span>
+                        <span class="skill-tag">RAG Pipelines</span>
+                        <span class="skill-tag">Qdrant</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">TensorFlow</span>
+                    </div>
+                </div>
+                <div class="skill-category tilt-card">
+                    <h3>Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">n8n</span>
+                        <span class="skill-tag">Arduino</span>
+                        <span class="skill-tag">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 4 — FEATURED PROJECTS ═══ -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <p class="section-label reveal">Featured Projects</p>
+            <h2 class="section-title reveal">Production systems &amp; case studies</h2>
+
+            <!-- Project 1 — LegalLawAdvisor -->
+            <div class="project-card reveal-left">
+                <div class="project-info">
+                    <span class="project-number">01</span>
+                    <h3 class="project-title">LegalLawAdvisor</h3>
+                    <p class="project-description">
+                        AI legal research &amp; reasoning system deployed in production. Indexed 5.4M+ legal documents
+                        using Qdrant with Qwen embeddings. LLaMA 80B Instruct for structured legal reasoning. Custom
+                        RAG pipeline with MongoDB metadata indexing. Evaluated across 12,000 lawyer-verified case
+                        simulations — 94% alignment accuracy. Actively used by a practicing High Court lawyer.
+                    </p>
+                    <div class="project-stack">
+                        <span class="project-stack-tag">Node.js</span>
+                        <span class="project-stack-tag">Qdrant</span>
+                        <span class="project-stack-tag">LLaMA 80B</span>
+                        <span class="project-stack-tag">MongoDB</span>
+                        <span class="project-stack-tag">React</span>
+                        <span class="project-stack-tag">Redis</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://legallawadvisor.app" target="_blank" rel="noopener" class="magnetic"
+                            data-strength="10">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                                <polyline points="15 3 21 3 21 9" />
+                                <line x1="10" y1="14" x2="21" y2="3" />
+                            </svg>
+                            Live System
+                        </a>
+                        <a href="https://github.com/TangledDaunT" target="_blank" rel="noopener" class="magnetic"
+                            data-strength="10">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14"
+                                height="14">
+                                <path
+                                    d="M12 .3a12 12 0 00-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0012 .3" />
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-visual reveal-right">
+                    <div class="infinite-menu-wrap">
+                        <canvas class="infinite-menu-canvas"
+                            data-items='[{"image":"https://picsum.photos/seed/rag/400/400?grayscale","link":"#","title":"RAG Pipeline","description":""},{"image":"https://picsum.photos/seed/llama/400/400?grayscale","link":"#","title":"LLM Layer","description":""},{"image":"https://picsum.photos/seed/oauth/400/400?grayscale","link":"#","title":"Auth & API","description":""},{"image":"https://picsum.photos/seed/frontend1/400/400?grayscale","link":"#","title":"Frontend","description":""}]'>
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 — Scheme Eligibility Checker -->
+            <div class="project-card reveal-left">
+                <div class="project-info">
+                    <span class="project-number">02</span>
+                    <h3 class="project-title">Scheme Eligibility Checker</h3>
+                    <p class="project-description">
+                        A deterministic rule-based eligibility assessment system with an LLM explanation layer.
+                        Rules execute first; language explains the decision after — never the reverse. Built for
+                        checking government scheme eligibility with transparent, auditable logic.
+                    </p>
+                    <div class="project-stack">
+                        <span class="project-stack-tag">Python</span>
+                        <span class="project-stack-tag">FastAPI</span>
+                        <span class="project-stack-tag">Rule Engine</span>
+                        <span class="project-stack-tag">LLM Layer</span>
+                        <span class="project-stack-tag">React</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://schemeeligibliltychecker.onrender.com" target="_blank" rel="noopener"
+                            class="magnetic" data-strength="10">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                                <polyline points="15 3 21 3 21 9" />
+                                <line x1="10" y1="14" x2="21" y2="3" />
+                            </svg>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/TangledDaunT" target="_blank" rel="noopener" class="magnetic"
+                            data-strength="10">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14"
+                                height="14">
+                                <path
+                                    d="M12 .3a12 12 0 00-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0012 .3" />
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-visual reveal-right">
+                    <div class="card-swap-container" id="scheme-card-swap"
+                        data-card-distance="55" data-vertical-distance="60" data-delay="5000" data-skew="5"
+                        data-cards='[{"title":"Rule Engine","tags":["Python","Logic"]},{"title":"API Layer","tags":["FastAPI","REST"]},{"title":"LLM Explain","tags":["GPT","NLP"]},{"title":"Frontend","tags":["React","Vite"]}]'>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 — HomeSecuritySetup -->
+            <div class="project-card reveal-left">
+                <div class="project-info">
+                    <span class="project-number">03</span>
+                    <h3 class="project-title">HomeSecuritySetup</h3>
+                    <p class="project-description">
+                        Real-time IoT &amp; computer vision home automation system. Integrated smart bulbs, CCTV,
+                        smart switches, and push notifications. Achieved 132ms motion detection latency using OpenCV
+                        and TensorFlow. Real-time tracking with WebSockets, n8n workflow automation, and Arduino
+                        device control.
+                    </p>
+                    <div class="project-stack">
+                        <span class="project-stack-tag">OpenCV</span>
+                        <span class="project-stack-tag">TensorFlow</span>
+                        <span class="project-stack-tag">Arduino</span>
+                        <span class="project-stack-tag">WebSockets</span>
+                        <span class="project-stack-tag">n8n</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/TangledDaunT" target="_blank" rel="noopener" class="magnetic"
+                            data-strength="10">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14"
+                                height="14">
+                                <path
+                                    d="M12 .3a12 12 0 00-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0012 .3" />
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-visual reveal-right">
+                    <div class="infinite-menu-wrap">
+                        <canvas class="infinite-menu-canvas"
+                            data-items='[{"image":"https://picsum.photos/seed/opencv/400/400?grayscale","link":"#","title":"Vision","description":""},{"image":"https://picsum.photos/seed/arduino/400/400?grayscale","link":"#","title":"IoT Hub","description":""},{"image":"https://picsum.photos/seed/n8nwf/400/400?grayscale","link":"#","title":"Automation","description":""},{"image":"https://picsum.photos/seed/websock/400/400?grayscale","link":"#","title":"Streaming","description":""}]'>
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 5 — SYSTEM ARCHITECTURE ═══ -->
+    <section class="architecture section" id="architecture">
+        <div class="container">
+            <p class="section-label reveal">System Architecture</p>
+            <h2 class="section-title reveal">How systems connect</h2>
+            <div class="arch-flow reveal-scale">
+                <div class="arch-flow-node">
+                    Client
+                    <span class="node-label">Interface</span>
+                </div>
+                <div class="arch-flow-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-pulse"></div>
+                </div>
+                <div class="arch-flow-node">
+                    API Layer
+                    <span class="node-label">Gateway</span>
+                </div>
+                <div class="arch-flow-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-pulse"></div>
+                </div>
+                <div class="arch-flow-node">
+                    Rule Engine
+                    <span class="node-label">Logic</span>
+                </div>
+                <div class="arch-flow-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-pulse"></div>
+                </div>
+                <div class="arch-flow-node">
+                    Qdrant
+                    <span class="node-label">Vectors</span>
+                </div>
+                <div class="arch-flow-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-pulse"></div>
+                </div>
+                <div class="arch-flow-node">
+                    LLM Layer
+                    <span class="node-label">Reasoning</span>
+                </div>
+                <div class="arch-flow-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-pulse"></div>
+                </div>
+                <div class="arch-flow-node">
+                    Response
+                    <span class="node-label">Output</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SECTION 6 — SYSTEMS LAB ═══ -->
+    <section class="lab section" id="lab">
+        <div class="container">
+            <p class="section-label reveal">Systems Lab</p>
+            <h2 class="section-title reveal">Live deployments</h2>
+            <div class="lab-grid stagger-children">
+                <a href="https://legallawadvisor.app" class="lab-item tilt-card" target="_blank" rel="noopener">
+                    <span class="lab-item-name">LegalLawAdvisor</span>
+                    <svg class="lab-item-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17l9.2-9.2M17 17V8H8" />
+                    </svg>
+                </a>
+                <a href="https://schemeeligibliltychecker.onrender.com" class="lab-item tilt-card" target="_blank"
+                    rel="noopener">
+                    <span class="lab-item-name">Eligibility Checker</span>
+                    <svg class="lab-item-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17l9.2-9.2M17 17V8H8" />
+                    </svg>
+                </a>
+                <a href="https://github.com/TangledDaunT" class="lab-item tilt-card" target="_blank" rel="noopener">
+                    <span class="lab-item-name">HomeSecuritySetup</span>
+                    <svg class="lab-item-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17l9.2-9.2M17 17V8H8" />
+                    </svg>
+                </a>
+                <a href="https://github.com/TangledDaunT" class="lab-item tilt-card" target="_blank" rel="noopener">
+                    <span class="lab-item-name">Portfolio Source</span>
+                    <svg class="lab-item-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17l9.2-9.2M17 17V8H8" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer class="footer" id="footer">
+        <div class="container footer-inner">
+            <div class="footer-left">
+                <p>Shreyansh Misra</p>
+                <span>Building reliable AI systems.</span>
+            </div>
+            <div class="footer-socials">
+                <a href="https://github.com/TangledDaunT" target="_blank" rel="noopener" aria-label="GitHub"
+                    class="magnetic" data-strength="15">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 .3a12 12 0 00-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0012 .3" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/shreyanshmisraa/" target="_blank" rel="noopener"
+                    aria-label="LinkedIn" class="magnetic" data-strength="15">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05a3.74 3.74 0 013.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 11-.01-4.13 2.06 2.06 0 01.01 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77A1.75 1.75 0 000 1.74v20.51A1.75 1.75 0 001.77 24h20.45A1.76 1.76 0 0024 22.25V1.74A1.76 1.76 0 0022.22 0z" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/shreyyansh._/" target="_blank" rel="noopener" aria-label="Instagram"
+                    class="magnetic" data-strength="15">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
