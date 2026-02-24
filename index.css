@@ -656,7 +656,6 @@ ol {
   isolation: isolate;
   transition: transform 0.15s ease-out, box-shadow 0.4s var(--ease);
   transform-style: preserve-3d;
-  flex-shrink: 0;
 }
 
 .reflective-card:hover {
@@ -1804,11 +1803,14 @@ ol {
 
   .hero-visual {
     justify-content: center;
+    width: 100%;
   }
 
   .reflective-card {
     width: 280px;
+    max-width: 80vw;
     height: 400px;
+    margin: 0 auto;
   }
 
   .hero-visual-frame {
@@ -1888,9 +1890,16 @@ ol {
     font-size: 2.75rem;
   }
 
+  .hero-visual {
+    justify-content: center;
+    width: 100%;
+  }
+
   .reflective-card {
     width: 220px;
+    max-width: 70vw;
     height: 320px;
+    margin: 0 auto;
   }
 
   .reflective-content {
