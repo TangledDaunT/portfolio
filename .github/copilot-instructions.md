@@ -7,7 +7,10 @@ Static portfolio website for an AI Systems Engineer. Vanilla HTML/CSS/JS — no 
 - **`index.html`** — Single-page layout with semantic sections: Hero, About, Skills, Projects, Architecture flow, Systems Lab, Footer
 - **`index.css`** — Full design system with CSS custom properties (`:root` vars), aurora/grid backgrounds, scroll-reveal animations, tilt effects, card-swap visuals, responsive breakpoints
 - **`main.js`** — IIFE containing: OGL WebGL particle background, custom cursor, blur-text hero animation, IntersectionObserver scroll reveals, tilt/magnetic effects, card-swap carousel, parallax, smooth scroll
-- External dep: [OGL](https://cdn.jsdelivr.net/npm/ogl@1.0.8/dist/ogl.umd.min.js) loaded via CDN for WebGL particles
+
+### External Dependencies (CDN)
+- [OGL](https://cdn.jsdelivr.net/npm/ogl/dist/ogl.umd.min.js) — WebGL particles
+- [gl-matrix](https://cdn.jsdelivr.net/npm/gl-matrix@3.4.3/gl-matrix-min.js) — InfiniteMenu WebGL2 (Lab section)
 
 ## Code Style
 - Vanilla JS in strict-mode IIFE — no modules, no imports, no build step
@@ -35,12 +38,42 @@ Static portfolio website for an AI Systems Engineer. Vanilla HTML/CSS/JS — no 
 ## Responsive Breakpoints
 - Tablet: `max-width: 1024px` — grid collapses, cursor hidden
 - Mobile: `max-width: 640px` — single column, hamburger nav, reduced spacing
+- Touch detection: `'ontouchstart' in window` — cursor hidden, tilt effects disabled
+
+## Performance Patterns
+- `{ passive: true }` on scroll listeners
+- `will-change: transform` on tilt cards
+- `requestAnimationFrame` for cursor, particles, animations
+- `backface-visibility: hidden` on 3D transforms
+
+## Accessibility Notes
+- `aria-label` required on icon-only buttons/links
+- `rel="noopener"` on external links
+- No `prefers-reduced-motion` support currently — consider adding for motion-sensitive users
 
 ## Key Patterns
-- **Card Swap**: `data-cards` JSON attribute on `.card-swap-container` drives animated stack (see Projects section)
+- **Card Swap**: `.card-swap-container` with data attributes:
+  - `data-cards` (required): JSON array `[{"title":"...", "tags":["...", "..."]}]`
+  - `data-card-distance`: horizontal offset (default 60px)
+  - `data-vertical-distance`: vertical offset (default 70px)
+  - `data-delay`: auto-cycle interval (default 5000ms)
+  - `data-skew`: skew angle (default 6deg)
+- **Infinite Menu**: `.infinite-menu-canvas` with `data-items` JSON array for WebGL2 carousel
 - **Magnetic buttons**: `.magnetic` class + `data-strength` attribute
 - **Section separators**: `::before` pseudo-element with gradient line at top of alternating sections
 - **Alternating bg**: Primary sections use transparent bg, even sections use `--bg-secondary`
+
+## Cursor Hover Targets
+Custom cursor expansion (`.hovering`) applies to:
+`a, button, .btn-primary, .btn-secondary, .lab-item, .skill-tag, .about-card, .arch-flow-node`
+
+## z-index Reference
+| Element | z-index |
+|---------|---------|
+| `.cursor-dot` | 9999 |
+| `.cursor-ring` | 9998 |
+| `.nav` | 1000 |
+| `.particles-container` | 0 |
 
 ## WebGL Particle System (OGL)
 The background particle effect uses [OGL](https://cdn.jsdelivr.net/npm/ogl@1.0.8/dist/ogl.umd.min.js) loaded via CDN. Configuration lives in `PARTICLE_CONFIG` at the top of `main.js` and mirrors a ReactBits-style props API:
