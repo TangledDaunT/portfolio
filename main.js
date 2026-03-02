@@ -6,20 +6,28 @@
 (function () {
   'use strict';
 
+  // ─── DEVICE & PERFORMANCE DETECTION ──────────────
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  const isMobile = window.matchMedia('(max-width: 1024px)').matches;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Skip expensive effects on mobile/touch or if user prefers reduced motion
+  const enableMouseEffects = !isTouchDevice && !isMobile && !prefersReducedMotion;
+
   // ─── PARTICLE BACKGROUND (ReactBits Particles — vanilla port) ────────────
   // Config mirrors ReactBits <Particles /> component props from reactbits.dev
   const PARTICLE_CONFIG = {
     particleColors: ['#ffffff'],
-    particleCount: 200,
+    particleCount: isMobile ? 80 : 200, // Reduce particles on mobile
     particleSpread: 10,
     speed: 0.1,
     particleBaseSize: 100,
-    moveParticlesOnHover: true,
+    moveParticlesOnHover: enableMouseEffects, // Disable on mobile
     particleHoverFactor: 1,
     alphaParticles: false,
     sizeRandomness: 1,
     cameraDistance: 20,
-    disableRotation: false,
+    disableRotation: prefersReducedMotion, // Respect reduced motion
     pixelRatio: 1,
   };
 
@@ -215,9 +223,8 @@
   let mouseX = 0, mouseY = 0;
   let dotX = 0, dotY = 0;
   let ringX = 0, ringY = 0;
-  const isTouchDevice = 'ontouchstart' in window;
 
-  if (!isTouchDevice && dot && ring) {
+  if (enableMouseEffects && dot && ring) {
     document.addEventListener('mousemove', (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
@@ -309,65 +316,73 @@
   });
 
   // ─── TILT CARD EFFECT (reactbits-inspired) ───────
-  const tiltCards = document.querySelectorAll('.tilt-card');
+  // Only enable on desktop for performance
+  if (enableMouseEffects) {
+    const tiltCards = document.querySelectorAll('.tilt-card');
 
-  tiltCards.forEach((card) => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
+    tiltCards.forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
 
-      const rotateX = ((y - centerY) / centerY) * -6;
-      const rotateY = ((x - centerX) / centerX) * 6;
+        const rotateX = ((y - centerY) / centerY) * -6;
+        const rotateY = ((x - centerX) / centerX) * 6;
 
-      card.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        card.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
 
-      // Mouse position for radial gradient highlight
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
-    });
+        // Mouse position for radial gradient highlight
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
 
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(600px) rotateX(0deg) rotateY(0deg) translateY(0)';
-    });
-  });
-
-  // ─── REFLECTIVE CARD TILT ────────────────────────
-  const heroTilt = document.getElementById('reflective-card');
-  if (heroTilt) {
-    heroTilt.addEventListener('mousemove', (e) => {
-      const rect = heroTilt.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateX = ((y - centerY) / centerY) * -8;
-      const rotateY = ((x - centerX) / centerX) * 8;
-
-      heroTilt.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-
-    heroTilt.addEventListener('mouseleave', () => {
-      heroTilt.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(600px) rotateX(0deg) rotateY(0deg) translateY(0)';
+      });
     });
   }
 
+  // ─── REFLECTIVE CARD TILT ────────────────────────
+  // Only enable on desktop for performance
+  if (enableMouseEffects) {
+    const heroTilt = document.getElementById('reflective-card');
+    if (heroTilt) {
+      heroTilt.addEventListener('mousemove', (e) => {
+        const rect = heroTilt.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -8;
+        const rotateY = ((x - centerX) / centerX) * 8;
+
+        heroTilt.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+
+      heroTilt.addEventListener('mouseleave', () => {
+        heroTilt.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
+      });
+    }
+  }
+
   // ─── MAGNETIC BUTTONS (reactbits Magnet) ─────────
-  const magneticEls = document.querySelectorAll('.magnetic');
+  // Only enable on desktop for performance
+  if (enableMouseEffects) {
+    const magneticEls = document.querySelectorAll('.magnetic');
 
-  magneticEls.forEach((el) => {
-    const strength = parseInt(el.dataset.strength) || 15;
+    magneticEls.forEach((el) => {
+      const strength = parseInt(el.dataset.strength) || 15;
 
-    el.addEventListener('mousemove', (e) => {
-      const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
+      el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
 
-      el.style.transform = `translate(${x / (100 / strength)}px, ${y / (100 / strength)}px)`;
-    });
+        el.style.transform = `translate(${x / (100 / strength)}px, ${y / (100 / strength)}px)`;
+      });
 
     el.addEventListener('mouseleave', () => {
       el.style.transform = 'translate(0, 0)';
@@ -388,6 +403,7 @@
       card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
     });
   });
+  } // End enableMouseEffects block
 
   // ─── SMOOTH SCROLL FOR NAV LINKS ────────────────
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -1160,28 +1176,31 @@
   })();
 
   // ─── ABOUT PHOTO MOUSE-REACTIVE TILT ────────────
-  var aboutPhoto = document.getElementById('about-photo');
-  if (aboutPhoto) {
-    aboutPhoto.addEventListener('mousemove', function (e) {
-      var rect = aboutPhoto.getBoundingClientRect();
-      var x = e.clientX - rect.left;
-      var y = e.clientY - rect.top;
-      var centerX = rect.width / 2;
-      var centerY = rect.height / 2;
+  // Only enable on desktop for performance
+  if (enableMouseEffects) {
+    var aboutPhoto = document.getElementById('about-photo');
+    if (aboutPhoto) {
+      aboutPhoto.addEventListener('mousemove', function (e) {
+        var rect = aboutPhoto.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        var centerX = rect.width / 2;
+        var centerY = rect.height / 2;
 
-      var rotateX = ((y - centerY) / centerY) * -10;
-      var rotateY = ((x - centerX) / centerX) * 10;
+        var rotateX = ((y - centerY) / centerY) * -10;
+        var rotateY = ((x - centerX) / centerX) * 10;
 
-      aboutPhoto.style.transform =
-        'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-4px)';
+        aboutPhoto.style.transform =
+          'perspective(800px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-4px)';
 
-      aboutPhoto.style.setProperty('--mouse-x', x + 'px');
-      aboutPhoto.style.setProperty('--mouse-y', y + 'px');
-    });
+        aboutPhoto.style.setProperty('--mouse-x', x + 'px');
+        aboutPhoto.style.setProperty('--mouse-y', y + 'px');
+      });
 
-    aboutPhoto.addEventListener('mouseleave', function () {
-      aboutPhoto.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0)';
-    });
+      aboutPhoto.addEventListener('mouseleave', function () {
+        aboutPhoto.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0)';
+      });
+    }
   }
 
 })();

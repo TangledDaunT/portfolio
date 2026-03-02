@@ -638,8 +638,18 @@ ol {
 .hero-visual {
   display: flex;
   justify-content: flex-end;
+  position: relative;
   opacity: 0;
   animation: fade-up 1s var(--ease) 0.6s forwards;
+}
+
+/* SVG filter definitions — should not affect layout */
+.reflective-svg-filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .reflective-card {
@@ -677,6 +687,8 @@ ol {
   z-index: 0;
   opacity: 0.9;
   transition: filter 0.3s ease;
+  /* Performance: hint browser to optimize this layer */
+  will-change: filter;
 }
 
 .reflective-content {
@@ -1803,6 +1815,7 @@ ol {
 
   .hero-visual {
     justify-content: center;
+    align-items: center;
     width: 100%;
   }
 
@@ -1811,6 +1824,8 @@ ol {
     max-width: 80vw;
     height: 400px;
     margin: 0 auto;
+    /* Disable transforms on tablet for performance */
+    transform: none !important;
   }
 
   .hero-visual-frame {
@@ -1892,6 +1907,7 @@ ol {
 
   .hero-visual {
     justify-content: center;
+    align-items: center;
     width: 100%;
   }
 
@@ -1900,6 +1916,18 @@ ol {
     max-width: 70vw;
     height: 320px;
     margin: 0 auto;
+    /* Disable transforms on mobile for performance */
+    transform: none !important;
+  }
+
+  /* Performance: simplify expensive filters on mobile */
+  .reflective-video {
+    filter: saturate(0.85) contrast(1.1) brightness(1.1) blur(4px);
+    will-change: auto;
+  }
+
+  .reflective-noise {
+    display: none;
   }
 
   .reflective-content {
