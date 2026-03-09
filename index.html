@@ -286,15 +286,15 @@
                     <span class="project-number">01</span>
                     <h3 class="project-title">LegalLawAdvisor</h3>
                     <p class="project-description">
-                        AI legal research &amp; reasoning system deployed in production. Indexed 5.4M+ legal documents
-                        using Qdrant with Qwen embeddings. LLaMA 80B Instruct for structured legal reasoning. Custom
-                        RAG pipeline with MongoDB metadata indexing. Evaluated across 12,000 lawyer-verified case
-                        simulations — 94% alignment accuracy. Actively used by a practicing High Court lawyer.
+                        Applied legal research tool built for a practicing High Court lawyer. It indexes millions of
+                        judgments in a vector database and sits behind a clean search interface that surfaces cases with
+                        short, cited answers. The goal was not a demo, but something a lawyer could rely on during
+                        actual case prep.
                     </p>
                     <div class="project-stack">
                         <span class="project-stack-tag">Node.js</span>
                         <span class="project-stack-tag">Qdrant</span>
-                        <span class="project-stack-tag">LLaMA 80B</span>
+                        <span class="project-stack-tag">LLM Layer</span>
                         <span class="project-stack-tag">MongoDB</span>
                         <span class="project-stack-tag">React</span>
                         <span class="project-stack-tag">Redis</span>
@@ -310,7 +310,7 @@
                             </svg>
                             Live System
                         </a>
-                        <a href="https://github.com/TangledDaunT/legalawadvisormain" target="_blank" rel="noopener" class="magnetic"
+                        <a href="https://github.com/TangledDaunT" target="_blank" rel="noopener" class="magnetic"
                             data-strength="10">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14"
                                 height="14">
@@ -336,9 +336,9 @@
                     <span class="project-number">02</span>
                     <h3 class="project-title">Scheme Eligibility Checker</h3>
                     <p class="project-description">
-                        A deterministic rule-based eligibility assessment system with an LLM explanation layer.
-                        Rules execute first; language explains the decision after — never the reverse. Built for
-                        checking government scheme eligibility with transparent, auditable logic.
+                        A rule-based checker that tells users which government schemes they are likely to qualify for,
+                        and why. The rules run first and the LLM only explains the result, so every decision can be
+                        traced back to concrete criteria instead of “AI said so”.
                     </p>
                     <div class="project-stack">
                         <span class="project-stack-tag">Python</span>
@@ -358,7 +358,7 @@
                             </svg>
                             Live Demo
                         </a>
-                        <a href="https://github.com/TangledDaunT/" target="_blank" rel="noopener" class="magnetic"
+                        <a href="https://github.com/TangledDaunT" target="_blank" rel="noopener" class="magnetic"
                             data-strength="10">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14"
                                 height="14">
@@ -383,10 +383,9 @@
                     <span class="project-number">03</span>
                     <h3 class="project-title">HomeSecuritySetup</h3>
                     <p class="project-description">
-                        Real-time IoT &amp; computer vision home automation system. Integrated smart bulbs, CCTV,
-                        smart switches, and push notifications. Achieved 132ms motion detection latency using OpenCV
-                        and TensorFlow. Real-time tracking with WebSockets, n8n workflow automation, and Arduino
-                        device control.
+                        A home security playground that ties together smart bulbs, cameras, motion detection and simple
+                        automations. It streams camera input, reacts to motion in close to real time, and triggers
+                        lights or notifications so the setup actually feels responsive instead of “lab only”.
                     </p>
                     <div class="project-stack">
                         <span class="project-stack-tag">OpenCV</span>
@@ -396,7 +395,7 @@
                         <span class="project-stack-tag">n8n</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/TangledDaunT" target="_blank" rel="noopener" class="magnetic"
+                        <a href="https://github.com/TangledDaunT/IOT" target="_blank" rel="noopener" class="magnetic"
                             data-strength="10">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14"
                                 height="14">
@@ -412,6 +411,119 @@
                         <canvas class="infinite-menu-canvas"
                             data-items='[{"image":"https://picsum.photos/seed/opencv/400/400?grayscale","link":"#","title":"Vision","description":""},{"image":"https://picsum.photos/seed/arduino/400/400?grayscale","link":"#","title":"IoT Hub","description":""},{"image":"https://picsum.photos/seed/n8nwf/400/400?grayscale","link":"#","title":"Automation","description":""},{"image":"https://picsum.photos/seed/websock/400/400?grayscale","link":"#","title":"Streaming","description":""}]'>
                         </canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 — Ai-motion-detector -->
+            <div class="project-card reveal-left">
+                <div class="project-info">
+                    <span class="project-number">04</span>
+                    <h3 class="project-title">AI Motion Detector</h3>
+                    <p class="project-description">
+                        A small Python project that watches a camera feed and flags motion instead of recording
+                        everything. It focuses on the “is something actually happening?” question and keeps the code
+                        simple enough to run on a modest machine.
+                    </p>
+                    <div class="project-stack">
+                        <span class="project-stack-tag">Python</span>
+                        <span class="project-stack-tag">Computer Vision</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/TangledDaunT/Ai-motion-detector" target="_blank" rel="noopener"
+                            class="magnetic" data-strength="10">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14"
+                                height="14">
+                                <path
+                                    d="M12 .3a12 12 0 00-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0012 .3" />
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-visual reveal-right">
+                    <div class="project-arch">
+                        <div class="arch-node">Camera Input</div>
+                        <div class="arch-connector"></div>
+                        <div class="arch-node">Motion Logic</div>
+                        <div class="arch-connector"></div>
+                        <div class="arch-node">Alerts / Logging</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 — mousepad_drawing -->
+            <div class="project-card reveal-left">
+                <div class="project-info">
+                    <span class="project-number">05</span>
+                    <h3 class="project-title">Mousepad Drawing</h3>
+                    <p class="project-description">
+                        A weekend project where the webcam and trackpad turn into a simple drawing surface. It tracks
+                        finger movement over the pad and paints strokes on screen, more as a playground for input
+                        handling than a full drawing app.
+                    </p>
+                    <div class="project-stack">
+                        <span class="project-stack-tag">Python</span>
+                        <span class="project-stack-tag">Camera Input</span>
+                        <span class="project-stack-tag">Interaction Design</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/TangledDaunT/mousepad_drawing" target="_blank" rel="noopener"
+                            class="magnetic" data-strength="10">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14"
+                                height="14">
+                                <path
+                                    d="M12 .3a12 12 0 00-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0012 .3" />
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-visual reveal-right">
+                    <div class="project-arch">
+                        <div class="arch-node">Webcam</div>
+                        <div class="arch-connector"></div>
+                        <div class="arch-node">Gesture Tracking</div>
+                        <div class="arch-connector"></div>
+                        <div class="arch-node">Canvas</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 — WiFi Deauth Tool -->
+            <div class="project-card reveal-left">
+                <div class="project-info">
+                    <span class="project-number">06</span>
+                    <h3 class="project-title">WiFi Deauth (ESP32)</h3>
+                    <p class="project-description">
+                        An ESP32-based WiFi deauthentication tool with a Bluetooth control interface, built for
+                        controlled, permissioned testing of network setups. It sits firmly in the “security lab” box and
+                        is only meant for environments where you own the hardware and have consent.
+                    </p>
+                    <div class="project-stack">
+                        <span class="project-stack-tag">ESP32</span>
+                        <span class="project-stack-tag">Bluetooth</span>
+                        <span class="project-stack-tag">Security Testing</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/TangledDaunT/wifi-deauth" target="_blank" rel="noopener"
+                            class="magnetic" data-strength="10">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14"
+                                height="14">
+                                <path
+                                    d="M12 .3a12 12 0 00-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 011.23 3.22c0 4.61-2.8 5.62-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0012 .3" />
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <div class="project-visual reveal-right">
+                    <div class="project-arch">
+                        <div class="arch-node">Bluetooth UI</div>
+                        <div class="arch-connector"></div>
+                        <div class="arch-node">ESP32 Firmware</div>
+                        <div class="arch-connector"></div>
+                        <div class="arch-node">Target Network</div>
                     </div>
                 </div>
             </div>
@@ -493,20 +605,41 @@
                         <path d="M7 17l9.2-9.2M17 17V8H8" />
                     </svg>
                 </a>
-                <a href="https://github.com/TangledDaunT" class="lab-item tilt-card" target="_blank" rel="noopener">
+                <a href="https://github.com/TangledDaunT/IOT" class="lab-item tilt-card" target="_blank" rel="noopener">
                     <span class="lab-item-name">HomeSecuritySetup</span>
                     <svg class="lab-item-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M7 17l9.2-9.2M17 17V8H8" />
                     </svg>
                 </a>
-                <a href="https://github.com/TangledDaunT" class="lab-item tilt-card" target="_blank" rel="noopener">
+                <a href="https://github.com/TangledDaunT/portfolio_web" class="lab-item tilt-card" target="_blank" rel="noopener">
                     <span class="lab-item-name">Portfolio Source</span>
                     <svg class="lab-item-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M7 17l9.2-9.2M17 17V8H8" />
                     </svg>
                 </a>
+            </div>
+
+            <!-- Compact list of all GitHub repositories -->
+            <div class="reveal" style="margin-top: 32px;">
+                <p class="section-label">GitHub Repositories</p>
+                <p class="about-text" style="margin-bottom: 16px;">
+                    A quick jump list to everything I have pushed so far — including older Java coursework and small
+                    experiments.
+                </p>
+                <ul class="about-text" style="font-size: 0.9rem; list-style: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: 10px;">
+                    <li><a href="https://github.com/TangledDaunT/Ai-motion-detector" target="_blank" rel="noopener">Ai-motion-detector</a></li>
+                    <li><a href="https://github.com/TangledDaunT/IOT" target="_blank" rel="noopener">IOT</a></li>
+                    <li><a href="https://github.com/TangledDaunT/mousepad_drawing" target="_blank" rel="noopener">mousepad_drawing</a></li>
+                    <li><a href="https://github.com/TangledDaunT/wifi-deauth" target="_blank" rel="noopener">wifi-deauth</a></li>
+                    <li><a href="https://github.com/TangledDaunT/JavaProject" target="_blank" rel="noopener">JavaProject</a></li>
+                    <li><a href="https://github.com/TangledDaunT/JavaSem3Project" target="_blank" rel="noopener">JavaSem3Project</a></li>
+                    <li><a href="https://github.com/TangledDaunT/javapro" target="_blank" rel="noopener">javapro</a></li>
+                    <li><a href="https://github.com/TangledDaunT/Banking-Bridge" target="_blank" rel="noopener">Banking-Bridge</a></li>
+                    <li><a href="https://github.com/TangledDaunT/ESP32-Deauther" target="_blank" rel="noopener">ESP32-Deauther</a></li>
+                    <li><a href="https://github.com/TangledDaunT/concierge" target="_blank" rel="noopener">concierge (fork)</a></li>
+                </ul>
             </div>
         </div>
     </section>
