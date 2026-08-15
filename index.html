@@ -14,6 +14,23 @@
       href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <script>
+      // Single Page Apps for GitHub Pages - MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      var pathSegmentsToKeep = 1;
+      var l = window.location;
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        var path = l.pathname.slice(0, 1 + pathSegmentsToKeep).join('/') + 
+                   decoded.replace(/\?/g, '&').replace(/[\/\?]/g, '/');
+        history.replaceState(null, null,
+          l.pathname.slice(0, 1 + pathSegmentsToKeep).join('/') + 
+          decoded.replace(/\?/g, '&').replace(/[\/\?]/g, '/')
+        );
+      }
+    </script>
     <script type="module" crossorigin src="/portfolio/assets/index-BUz0UJil.js"></script>
     <link rel="stylesheet" crossorigin href="/portfolio/assets/index-DxqoBUN7.css">
   </head>
