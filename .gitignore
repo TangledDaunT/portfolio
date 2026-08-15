@@ -1,0 +1,7 @@
+.DS_Store
+*.MOV
+*.mov
+node_modules/
+dist/
+.env
+.env.*
