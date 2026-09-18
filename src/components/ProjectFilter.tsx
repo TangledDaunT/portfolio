@@ -13,7 +13,7 @@ const ProjectFilter: React.FC<ProjectFilterProps> = ({ projects, onSelect }) => 
 
   const categories = [
     { id: 'all', label: 'All Projects', count: projects.length },
-    { id: 'featured', label: categoryLabels.featured, count: projects.filter(p => p.category === 'featured').length },
+    { id: 'featured', label: 'Deployed Projects', count: projects.filter(p => p.liveUrl).length },
     { id: 'iot', label: categoryLabels.iot, count: projects.filter(p => p.category === 'iot').length },
     { id: 'automation', label: categoryLabels.automation, count: projects.filter(p => p.category === 'automation').length },
     { id: 'experiment', label: categoryLabels.experiment, count: projects.filter(p => p.category === 'experiment').length },

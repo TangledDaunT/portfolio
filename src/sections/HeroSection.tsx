@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import FadeIn from '../components/FadeIn';
 import Magnet from '../components/Magnet';
 import ContactButton from '../components/ContactButton';
+import { profileImageUrl } from '../lib/cloudinary';
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLElement>(null);
@@ -122,13 +123,15 @@ const HeroSection = () => {
           animate={{ rotate: -360 }}
           transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
         >
-          <polygon
-            points="50%,30% 70%,50% 50%,70% 30%,50%"
-            fill="none"
-            stroke="url(#particleGrad)"
-            strokeWidth="0.5"
-            opacity={0.1}
-          />
+          <svg x="0" y="0" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon
+              points="50,30 70,50 50,70 30,50"
+              fill="none"
+              stroke="url(#particleGrad)"
+              strokeWidth="0.5"
+              opacity={0.1}
+            />
+          </svg>
         </motion.g>
       </svg>
 
@@ -236,7 +239,7 @@ const HeroSection = () => {
 
                   {/* Photo */}
                   <img
-                    src="/my-photo.png"
+                    src={profileImageUrl}
                     alt="Shreyansh Misra"
                     className="relative w-[260px] sm:w-[300px] md:w-[340px] lg:w-[380px] object-contain pointer-events-none select-none rounded-full"
                     style={{ maxWidth: '85vw' }}

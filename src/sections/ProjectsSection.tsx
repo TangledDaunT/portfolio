@@ -182,11 +182,12 @@ const ProjectsSection = () => {
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(allProjects);
 
   // Separate projects by tier
-  const featuredProjects = filteredProjects.filter(p => p.category === 'featured');
+  const featuredProjects = filteredProjects.filter(p => Boolean(p.liveUrl));
   const iotProjects = filteredProjects.filter(p => p.category === 'iot');
   const automationProjects = filteredProjects.filter(p => p.category === 'automation');
-  const experimentProjects = filteredProjects.filter(p => p.category === 'experiment');
+  const experimentProjects = filteredProjects.filter(p => p.category === 'experiment' && !p.liveUrl);
   const coursework = filteredProjects.filter(p => p.category === 'coursework');
+  const newGithubProjects = filteredProjects.filter(p => p.isNew);
 
   return (
     <section className="bg-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 relative z-10 px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32">
@@ -216,7 +217,7 @@ const ProjectsSection = () => {
           <div className="space-y-6 mb-16">
             <FadeIn delay={0.1} y={20}>
               <div className="text-center">
-                <span className="text-[#D7E2EA]/50 font-light uppercase tracking-widest text-sm">Featured Projects</span>
+                <span className="text-[#D7E2EA]/50 font-light uppercase tracking-widest text-sm">Deployed Projects</span>
               </div>
             </FadeIn>
             {featuredProjects.map((project, i) => (
@@ -284,6 +285,21 @@ const ProjectsSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {coursework.map((project, i) => (
                 <ProjectCard key={project.name} project={project} index={i} variant="compact" />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {newGithubProjects.length > 0 && (
+          <div className="mb-16">
+            <FadeIn delay={0.35} y={20}>
+              <div className="text-center mb-6">
+                <span className="text-[#D7E2EA]/50 font-light uppercase tracking-widest text-sm">New GitHub Projects</span>
+              </div>
+            </FadeIn>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {newGithubProjects.map((project, i) => (
+                <ProjectCard key={`new-${project.name}`} project={project} index={i} variant="medium" />
               ))}
             </div>
           </div>
