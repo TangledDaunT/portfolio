@@ -135,10 +135,11 @@ const PlaygroundSection = () => {
   ];
 
   return (
-    <section className="bg-white rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32">
+    <section id="playground" aria-labelledby="playground-heading" className="bg-white rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32">
       <div className="max-w-6xl mx-auto">
         <FadeIn delay={0} y={40}>
           <h2
+            id="playground-heading"
             className="text-[#0C0C0C] font-black uppercase text-center mb-16 sm:mb-20"
             style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
           >

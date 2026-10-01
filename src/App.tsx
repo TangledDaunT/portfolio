@@ -8,7 +8,11 @@ import ScrollProgress from './components/ScrollProgress';
 
 const App = () => {
   return (
-    <main style={{ overflowX: 'clip', background: '#0C0C0C' }}>
+    <>
+      <a href="#about" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[1001] focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:text-black">
+        Skip to content
+      </a>
+      <main id="main-content" style={{ overflowX: 'clip', background: '#0C0C0C' }}>
       {/* Scroll Progress Indicator */}
       <ScrollProgress />
 
@@ -26,7 +30,7 @@ const App = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-center md:text-left">
               <h3 className="text-[#0C0C0C] font-black text-3xl mb-2">Shreyansh Misra</h3>
-              <p className="text-[#0C0C0C]/60 font-light">AI Systems Engineer & Full Stack Developer</p>
+              <p className="text-[#0C0C0C]/60 font-light">AI Systems Engineer & Full-Stack Developer · TangledDaunT</p>
             </div>
 
             <div className="flex gap-6">
@@ -66,12 +70,13 @@ const App = () => {
 
           <div className="mt-12 pt-8 border-t border-[#0C0C0C]/10 text-center">
             <p className="text-[#0C0C0C]/40 font-light text-sm">
-              © {new Date().getFullYear()} Shreyansh Misra. Built with React + Vite + ❤️
+              © {new Date().getFullYear()} Shreyansh Misra (TangledDaunT). Built with React + Vite + ❤️
             </p>
           </div>
         </div>
       </footer>
-    </main>
+      </main>
+    </>
   );
 };
 

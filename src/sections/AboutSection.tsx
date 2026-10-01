@@ -8,6 +8,8 @@ import { portfolioStats } from '../data/stats';
 const AboutSection = () => {
   return (
     <section
+      id="about"
+      aria-labelledby="about-heading"
       className="relative min-h-screen flex flex-col items-center justify-center px-5 sm:px-8 md:px-10 py-20 sm:py-32 md:py-40"
       style={{ background: '#0C0C0C' }}
     >
@@ -31,6 +33,7 @@ const AboutSection = () => {
         {/* Heading */}
         <FadeIn delay={0} y={40}>
           <h2
+            id="about-heading"
             className="hero-heading font-black uppercase leading-none tracking-tight text-center"
             style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
           >
@@ -43,7 +46,7 @@ const AboutSection = () => {
           <FadeIn delay={0.1} y={30}>
             <div style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}>
               <p className="text-[#D7E2EA] font-medium text-center leading-relaxed">
-                With deep expertise in AI systems and full stack development, i focus on RAG pipelines, automation, and building reliable production systems. I truly enjoy working with teams that aim to push boundaries and deliver real-world impact.
+                I&apos;m Shreyansh Misra, also known online as TangledDaunT. As an AI systems engineer and full-stack developer, I focus on RAG pipelines, LLM architecture, automation, and reliable production systems.
               </p>
             </div>
           </FadeIn>

@@ -1,0 +1,17 @@
+{
+  "name": "Shreyansh Misra — AI Systems Engineer",
+  "short_name": "Shreyansh Misra",
+  "description": "Portfolio of Shreyansh Misra, also known as TangledDaunT.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0C0C0C",
+  "theme_color": "#0C0C0C",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
