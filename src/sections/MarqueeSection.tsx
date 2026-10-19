@@ -58,7 +58,7 @@ const MarqueeSection = () => {
             <img
               key={index}
               src={url}
-              alt=""
+              alt="Template preview"
               className="w-[420px] h-[270px] rounded-2xl object-cover flex-shrink-0"
               loading="lazy"
             />
@@ -74,7 +74,7 @@ const MarqueeSection = () => {
             <img
               key={index}
               src={url}
-              alt=""
+              alt="Template preview"
               className="w-[420px] h-[270px] rounded-2xl object-cover flex-shrink-0"
               loading="lazy"
             />

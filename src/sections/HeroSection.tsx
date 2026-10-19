@@ -240,7 +240,7 @@ const HeroSection = () => {
                   {/* Photo */}
                   <img
                     src={profileImageUrl}
-                    alt="Shreyansh Misra"
+                    alt="Shreyansh Misra, AI Systems Engineer and Developer"
                     className="relative w-[260px] sm:w-[300px] md:w-[340px] lg:w-[380px] object-contain pointer-events-none select-none rounded-full"
                     style={{ maxWidth: '85vw' }}
                     draggable={false}
