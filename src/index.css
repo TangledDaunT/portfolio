@@ -61,3 +61,188 @@ body,
   background: rgba(182, 0, 168, 0.25);
   color: #D7E2EA;
 }
+
+/* ═══════════════════════════════════
+   LAST UPDATED (static footer note)
+   ═══════════════════════════════════ */
+
+.last-updated {
+  padding: 16px 16px 32px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: rgba(215, 226, 234, 0.45);
+}
+
+/* ═══════════════════════════════════
+   FAQ / TESTIMONIALS / BLOG SECTIONS
+   ═══════════════════════════════════ */
+
+.faq-section,
+.testimonials-section,
+.blog-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 96px 20px;
+  color: #D7E2EA;
+}
+
+.faq-section h2,
+.testimonials-section h2,
+.blog-section h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.blog-section > p {
+  color: rgba(215, 226, 234, 0.6);
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+/* FAQ */
+.faq-item {
+  padding: 24px 0;
+  border-top: 1px solid rgba(215, 226, 234, 0.1);
+}
+
+.faq-item:last-child {
+  border-bottom: 1px solid rgba(215, 226, 234, 0.1);
+}
+
+.faq-item h3 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #D7E2EA;
+}
+
+.faq-item p {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  font-weight: 300;
+  color: rgba(215, 226, 234, 0.7);
+}
+
+.faq-item a {
+  color: #BBCCD7;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Testimonials */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.testimonial-card {
+  padding: 28px;
+  border: 1px solid rgba(215, 226, 234, 0.1);
+  border-radius: 14px;
+  background: rgba(215, 226, 234, 0.02);
+}
+
+.testimonial-card > p:first-child {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  font-weight: 300;
+  color: rgba(215, 226, 234, 0.85);
+  margin-bottom: 16px;
+}
+
+.testimonial-author {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(215, 226, 234, 0.45);
+}
+
+/* Blog */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.blog-card {
+  padding: 28px;
+  border: 1px solid rgba(215, 226, 234, 0.1);
+  border-radius: 14px;
+  background: rgba(215, 226, 234, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.blog-card:hover {
+  border-color: rgba(215, 226, 234, 0.28);
+  transform: translateY(-3px);
+}
+
+.blog-card h3 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.blog-card p {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  font-weight: 300;
+  color: rgba(215, 226, 234, 0.6);
+  flex: 1;
+}
+
+.blog-card a {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #BBCCD7;
+}
+
+.blog-card a:hover {
+  color: #fff;
+}
+
+/* Footer nav — internal + social links */
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(12, 12, 12, 0.1);
+}
+
+.footer-nav a {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(12, 12, 12, 0.55);
+  transition: color 0.25s ease;
+}
+
+.footer-nav a:hover {
+  color: #0C0C0C;
+}
+
+@media (max-width: 640px) {
+
+  .faq-section,
+  .testimonials-section,
+  .blog-section {
+    padding: 64px 20px;
+  }
+
+  .faq-section h2,
+  .testimonials-section h2,
+  .blog-section h2 {
+    font-size: 1.75rem;
+  }
+}
