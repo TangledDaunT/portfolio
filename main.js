@@ -1203,4 +1203,21 @@
     }
   }
 
+  // ─── INDEXNOW IMPLEMENTATION ─────────────────────
+  (function() {
+    const key = '60665fb331aafc340a44a9a3f6be18b4';
+    const url = 'https://tangleddaunt.dpdns.org/';
+    const endpoints = [
+      'https://www.bing.com/indexnow',
+      'https://yandex.com/indexnow'
+    ];
+    endpoints.forEach(endpoint => {
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ key, url, host: 'tangleddaunt.dpdns.org' })
+      }).catch(() => {});
+    });
+  })();
+
 })();
