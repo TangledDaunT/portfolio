@@ -1,0 +1,21 @@
+# Shreyansh Misra — TangledDaunT
+> AI systems engineer and full-stack developer building reliable RAG, LLM, automation, and IoT products.
+
+## About
+- [Home](https://tangleddaunt.dpdns.org/): Personal portfolio of Shreyansh Misra
+- [GitHub](https://github.com/TangledDaunT): Open-source projects and contributions
+- [LinkedIn](https://www.linkedin.com/in/shreyansh-misra): Professional profile
+
+## Key Facts
+- AI Systems Engineer specializing in RAG pipelines and LLM architecture
+- Full-stack developer: React, TypeScript, FastAPI, Python
+- IoT and automation: ESP32, OpenCV, TensorFlow
+- 21 projects including production AI systems, IoT devices, and web applications
+- Based in India, working worldwide
+
+## Services
+- AI Systems: Production RAG pipelines, vector search, evaluation loops
+- Full Stack: React frontends, FastAPI backends, cloud deployment
+- Automation & IoT: ESP32, sensor systems, hardware-software integration
+- LLM Architecture: Multi-agent workflows, prompt pipelines, LangChain/LangGraph
+- Web Development: React, Next.js, TypeScript, Tailwind
