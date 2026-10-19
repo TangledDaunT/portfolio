@@ -3,6 +3,7 @@ import { motion, useInView, useSpring, useTransform } from 'framer-motion';
 
 interface AnimatedCounterProps {
   value: number;
+  prefix?: string;
   suffix?: string;
   duration?: number;
   delay?: number;
@@ -10,6 +11,7 @@ interface AnimatedCounterProps {
 
 const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
   value,
+  prefix = '',
   suffix = '',
   duration = 2,
   delay = 0,
@@ -50,6 +52,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
   if (prefersReducedMotion) {
     return (
       <span ref={ref}>
+        {prefix}
         {value}
         {suffix}
       </span>
@@ -58,6 +61,7 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
 
   return (
     <span ref={ref}>
+      {prefix}
       <motion.span>{display}</motion.span>
       {suffix}
     </span>

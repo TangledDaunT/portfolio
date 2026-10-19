@@ -1,6 +1,7 @@
 import HeroSection from './sections/HeroSection';
 import MarqueeSection from './sections/MarqueeSection';
 import AboutSection from './sections/AboutSection';
+import EducationSection from './sections/EducationSection';
 import ServicesSection from './sections/ServicesSection';
 import ProjectsSection from './sections/ProjectsSection';
 import PlaygroundSection from './sections/PlaygroundSection';
@@ -20,9 +21,73 @@ const App = () => {
       <HeroSection />
       <MarqueeSection />
       <AboutSection />
+      <EducationSection />
       <ServicesSection />
       <ProjectsSection />
       <PlaygroundSection />
+
+      {/* FAQ Section */}
+      <section id="faq" className="faq-section">
+        <h2>FAQ</h2>
+        <div className="faq-item">
+          <h3>What is RAG (Retrieval-Augmented Generation)?</h3>
+          <p>RAG is an AI architecture that combines information retrieval with language model generation. It searches a knowledge base for relevant passages, then uses an LLM to generate accurate, context-aware answers. I build production RAG pipelines serving 5.4M+ legal documents with sub-400ms retrieval.</p>
+        </div>
+        <div className="faq-item">
+          <h3>What technologies do you work with?</h3>
+          <p>My core stack includes Python, FastAPI, React, TypeScript, LangChain, LangGraph, Qdrant, PostgreSQL, and cloud platforms (AWS, Vercel). For IoT, I work with ESP32, OpenCV, and TensorFlow.</p>
+        </div>
+        <div className="faq-item">
+          <h3>What is TangledDaunT?</h3>
+          <p>TangledDaunT is my online alias and personal brand. It represents my approach to development: untangling complex systems into reliable, production-ready solutions.</p>
+        </div>
+        <div className="faq-item">
+          <h3>How can I hire you for AI development?</h3>
+          <p>I'm available for freelance AI systems development, RAG pipeline construction, LLM architecture design, and full-stack web development. Contact me at <a href="mailto:hello@tangleddaunt.dev">hello@tangleddaunt.dev</a>.</p>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="testimonials-section">
+        <h2>What People Say</h2>
+        <div className="testimonial-grid">
+          <div className="testimonial-card">
+            <p>"Shreyansh built a RAG pipeline that transformed how we search legal documents. Sub-400ms retrieval across 5.4M+ documents is impressive."</p>
+            <p className="testimonial-author">— High Court Lawyer, LegalLawAdvisor</p>
+          </div>
+          <div className="testimonial-card">
+            <p>"The voice journal app Shreyansh built works flawlessly. Fully offline, always-on, and integrates perfectly with my Obsidian workflow."</p>
+            <p className="testimonial-author">— Early Adopter, Voice Journal</p>
+          </div>
+          <div className="testimonial-card">
+            <p>"Working with Shreyansh on MindBridge was a pleasure. He understands both the technical and human sides of mental health tech."</p>
+            <p className="testimonial-author">— Therapist, MindBridge Beta</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section id="blog" className="blog-section">
+        <h2>Blog</h2>
+        <p>Writing about AI systems, RAG pipelines, LLM architecture, and IoT development.</p>
+        <div className="blog-grid">
+          <article className="blog-card">
+            <h3>Building Production RAG Pipelines: Lessons from LegalLawAdvisor</h3>
+            <p>How I built a RAG system serving 5.4M+ legal documents with sub-400ms retrieval...</p>
+            <a href="#">Read more →</a>
+          </article>
+          <article className="blog-card">
+            <h3>Offline-First AI: Building a Local Voice Journal</h3>
+            <p>Why I built a fully offline voice journal and the technical challenges involved...</p>
+            <a href="#">Read more →</a>
+          </article>
+          <article className="blog-card">
+            <h3>ESP32 Home Automation: From Prototype to Production</h3>
+            <p>My journey building IoT systems with ESP32, from simple sensors to full home automation...</p>
+            <a href="#">Read more →</a>
+          </article>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="bg-white py-16 px-5 sm:px-8 md:px-10">
@@ -57,7 +122,7 @@ const App = () => {
                 </svg>
               </a>
               <a
-                href="mailto:shreyansh@example.com"
+                href="mailto:hello@tangleddaunt.dev"
                 className="text-[#0C0C0C]/60 hover:text-[#0C0C0C] transition-colors"
                 aria-label="Send email"
               >
@@ -69,6 +134,17 @@ const App = () => {
           </div>
 
           <div className="mt-12 pt-8 border-t border-[#0C0C0C]/10 text-center">
+            <nav className="footer-nav" aria-label="Footer">
+              <a href="/case-studies.html">Case Studies</a>
+              <a href="/privacy.html">Privacy Policy</a>
+              <a href="/terms.html">Terms of Service</a>
+              <a href="#faq">FAQ</a>
+              <a href="#testimonials">Testimonials</a>
+              <a href="#blog">Blog</a>
+              <a href="https://github.com/TangledDaunT" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://linkedin.com/in/shreyansh-misra" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="mailto:hello@tangleddaunt.dev">Email</a>
+            </nav>
             <p className="text-[#0C0C0C]/40 font-light text-sm">
               © {new Date().getFullYear()} Shreyansh Misra (TangledDaunT). Built with React + Vite + ❤️
             </p>

@@ -7,7 +7,7 @@ interface ContactButtonProps {
 const ContactButton: React.FC<ContactButtonProps> = ({ className = '' }) => {
   return (
     <a
-      href="mailto:shreyansh@example.com"
+      href="mailto:hello@tangleddaunt.dev"
       className={`inline-flex items-center justify-center rounded-full px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base font-medium uppercase tracking-widest text-white cursor-pointer transition-transform duration-200 hover:scale-105 ${className}`}
       style={{
         background:

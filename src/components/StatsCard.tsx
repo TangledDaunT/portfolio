@@ -3,6 +3,7 @@ import AnimatedCounter from './AnimatedCounter';
 
 interface StatsCardProps {
   value: number;
+  prefix?: string;
   suffix?: string;
   label: string;
   description: string;
@@ -11,6 +12,7 @@ interface StatsCardProps {
 
 const StatsCard: React.FC<StatsCardProps> = ({
   value,
+  prefix = '',
   suffix = '',
   label,
   description,
@@ -27,7 +29,7 @@ const StatsCard: React.FC<StatsCardProps> = ({
       <div className="flex flex-col gap-3">
         <div className="flex items-baseline gap-1">
           <span className="hero-heading font-black text-[#D7E2EA]" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)' }}>
-            <AnimatedCounter value={value} suffix={suffix} duration={2} delay={delay} />
+            <AnimatedCounter value={value} prefix={prefix} suffix={suffix} duration={2} delay={delay} />
           </span>
         </div>
         <h3 className="text-[#D7E2EA] font-semibold uppercase tracking-wide text-sm sm:text-base">

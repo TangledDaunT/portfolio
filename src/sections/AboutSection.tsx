@@ -23,7 +23,7 @@ const AboutSection = () => {
       >
         <img
           src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/moon_icon.11395d36.png"
-          alt=""
+          alt="Decorative moon icon"
           className="w-[120px] sm:w-[160px] md:w-[210px] opacity-30"
         />
       </FadeIn>
@@ -60,6 +60,7 @@ const AboutSection = () => {
                 <StatsCard
                   key={stat.label}
                   value={stat.value}
+                  prefix={stat.prefix}
                   suffix={stat.suffix}
                   label={stat.label}
                   description={stat.description}
